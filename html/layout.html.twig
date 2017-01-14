@@ -1,79 +1,468 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{% block title %}_master{% endblock %}</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        
-        <link rel="stylesheet" href="{{ asset('css/normalize.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+      <meta charset="utf-8" />
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-        <script src="{{ asset('js/vendor/modernizr-2.6.2.min.js') }}"></script>
-        {% block css_add %}{% endblock %}
-        {% block topjs_add %}{% endblock %}
+        <!-- /.website title -->
+        <title>Losar 2017</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <!-- CSS Files -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="fonts/icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet">
+        <link href="css/animate.css" rel="stylesheet" media="screen">
+        <link href="css/owl.theme.css" rel="stylesheet">
+        <link href="css/owl.carousel.css" rel="stylesheet">
+
+        <!-- Colors -->
+        <link href="css/css-index.css" rel="stylesheet" media="screen">
+        <!-- <link href="css/css-index-green.css" rel="stylesheet" media="screen"> -->
+        <!-- <link href="css/css-index-purple.css" rel="stylesheet" media="screen"> -->
+        <!-- <link href="css/css-index-red.css" rel="stylesheet" media="screen"> -->
+        <!-- <link href="css/css-index-orange.css" rel="stylesheet" media="screen"> -->
+        <!-- <link href="css/css-index-yellow.css" rel="stylesheet" media="screen"> -->
+
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" />
+
     </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        Menu
-        <div style="border:1px solid;padding:9px;">
-        {% if menu['main-menu'] is defined %}
-            <ul>
-        {% for item in menu['main-menu'] %}
-            {% if item.mt_slug=='main-menu' %}
-                <li>{% if item.sel %}SEL::{% endif %}<a href="{{item.uri}}">{{item.label}}</a></li>
-                {% if item['SubMenu'] is defined %}
-                <ul>
-                    {% for item2 in item['SubMenu'] %}
-                        <li><a href="{{item2.uri}}">{{item2.label}}</a></li>
-                    {% endfor%}
-                </ul>
-                {% endif %}
-            {% endif %}
-        {% endfor%}
-            </ul>
-        {% endif %}
+
+    <body data-spy="scroll" data-target="#navbar-scroll">
+
+        <!-- /.preloader -->
+        <div id="preloader"></div>
+        <div id="top"></div>
+
+        <!-- /.parallax full screen background image -->
+        <div class="fullscreen landing parallax" style="background-image:url('images/bg.jpg');" data-img-width="2000" data-img-height="1333" data-diff="100">
+
+            <div class="overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7">
+
+                            <!-- /.logo -->
+                            <div class="logo wow fadeInDown"> <a href=""><img src="images/logo.png" alt="logo"></a></div>
+
+                            <!-- /.main title -->
+                            <h1 class="wow fadeInLeft">
+                                Celebrate it <br>by saving lives!
+                            </h1>
+
+                            <!-- /.header paragraph -->
+                            <div class="landing-text wow fadeInUp">
+                                <p>
+                                  <!-- NOTE: -->
+                                  It is especially beneficial to save animals or fish if the astrological aspect relating to one's life force or 'sog' is negative in the current year. This depends on your year of birth.
+                                </p>
+                            </div>
+
+                            <!-- /.header button -->
+                            <!--
+                            <div class="head-btn wow fadeInLeft">
+                                <a href="#feature" class="btn-primary">Features</a>
+                                <a href="#download" class="btn-default">Download</a>
+                            </div>
+                            -->
+
+
+                        </div>
+
+                        <!-- /.signup form -->
+                        <div class="col-md-5">
+
+                            <div class="signup-header wow fadeInUp">
+                              <form class="form-header" action=""id="#">
+                                <!-- <h3 class="form-title text-center">DONATE NOW!</h3> -->
+                                <br>
+                                <div class="donate1">
+
+                                  <div class="row" style="padding-bottom:5px;">
+                                    <div class="col-xs-9">
+                                      <span class="title">
+                                        <img src="images/ifish.png" alt="" style="float:left;" />
+                                        <b>Fish Release:</b>
+                                        <br>
+                                        &pound;1.50 per fish
+                                      </span>
+                                    </div>
+                                    <div class="col-xs-3">
+                                      <!-- <div class="form-group"> -->
+                                          <select class="form-control input-lg js-fishs-select" name="fishs" id="fishs" >
+                                            <option value="">loading...</option>
+                                          </select>
+                                      <!-- </div> -->
+                                    </div>
+                                  </div>
+
+                                  <div class="row" style="border-top:0px solid #efefef;padding-top:15px;">
+                                    <div class="col-xs-9">
+                                      <span class="title">
+                                        <img src="images/igoat.png" alt="" style="float:left;" />
+                                        <b>Goat Release:</b>
+                                        <br>
+                                        &pound;145 per goat
+                                      </span>
+                                    </div>
+                                    <div class="col-xs-3">
+                                      <!-- <div class="form-group"> -->
+                                      <select class="form-control input-lg js-goats-select" name="goats" id="goats" >
+                                        <option value="">loading...</option>
+                                      </select>
+                                      <!-- </div> -->
+                                    </div>
+                                  </div>
+
+                                  <!--
+                                  <b class="title">
+                                    <img src="images/igoat.png" alt="" />
+                                    Goat Release: &pound;145 per goat
+                                  </b>
+
+                                      <div class="form-group">
+                                          <select class="form-control input-lg js-goats-select" name="goats" id="goats" >
+                                            <option value="">loading...</option>
+                                          </select>
+                                      </div>
+                                  -->
+
+                                  <div class="form-group last">
+                                      <input type="text" name="donation" value="&pound;0" class="donation" id="donationPrice" readonly="readonly">
+                                      <p class="js-noDonationInfo bg-warning text-center" style="color:#000000;font-size:14px;">
+                                        Select a quantity of animals to release.
+                                      </p>
+                                      <input type="submit" class="js-sendDonation btn btn-warning btn-block btn-lg" value="DONATE" style="display:none;">
+                                  </div>
+
+                                  <p class="text-center">
+                                    Deadline for orders 31th march
+                                  </p>
+
+
+                                  </form>
+                                </div>
+
+                                <!--
+                                <form class="form-header" action="http://moxdesign.us10.list-manage.com/subscribe/post" role="form" method="POST" id="#">
+                                    <input type="hidden" name="u" value="503bdae81fde8612ff4944435">
+                                    <input type="hidden" name="id" value="bfdba52708">
+                                    <div class="form-group">
+                                        <input class="form-control input-lg" name="MERGE1" id="name" type="text" placeholder="Your name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control input-lg" name="MERGE0" id="email" type="email" placeholder="Email address" required>
+                                    </div>
+                                    <div class="form-group last">
+                                        <input type="submit" class="btn btn-warning btn-block btn-lg" value="SUBSCRIBE">
+                                    </div>
+                                    <p class="privacy text-center">We will not share your email. Read our <a href="privacy.html">privacy policy</a>.</p>
+                                </form>
+                                -->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        {% block content %}
-        {% endblock %}                    
-        <footer></footer>        
 
-        
-        
-        
-        
-        
-        
-        
-        
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="{{ asset('js/vendor/jquery-1.11.1.min.js') }}"><\/script>')</script>
+        <!-- NAVIGATION -->
+        <div id="menu">
+            <nav class="navbar-wrapper navbar-default" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-backyard">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand site-name" href="#top"><img src="images/logo2.png" alt="logo"></a>
+                    </div>
 
-        <script src="{{ asset('js/plugins.js') }}"></script>
-        <script src="{{ asset('js/main.js') }}"></script>
+                    <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#intro">About</a></li>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+                            <li><a href="#AstrologicalAspect">Astrological Aspect</a></li>
+
+                            <li><a href="#ChatralRinpoche">Chatral Rinpoche</a></li>
+
+                            <li><a href="#DonationsbyBankTransfer">Donations by Bank Transfer</a></li>
+                            <!--
+                            <li><a href="#testi">Reviews</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            -->
+
+                            <li><a href="#top">Donate</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- /.intro section -->
+        <div id="intro">
+            <div class="container">
+                <div class="row">
+
+
+                    <!-- /.intro content -->
+                    <div class="col-md-6 wow slideInLeft">
+                        <h2>The benefit of saving lives:</h2>
+                        <p>
+                          Save the lives of animals awaiting slaughter! In Tibetan this practice is known as 'tshe thar', life release. Here you can buy fish and goats in Nepal. They will be released into environments where they will be able to live undisturbed, such as natural sanctuaries where hunting and fishing is prohibited. The fish and animals will be blessed with mantras and given myong grol (liberation through tasting), precious substances that give the animals a good cause for higher future rebirth. It is customary to save a number of animals equal to your age. So for example a 25 year old would save 25 fish. However you can choose to save any number of animals that you want. Since a human being can commit no greater sin than taking the life of another living being, by implication, there is no greater source of accumulating merit than saving life.
+                        </p>
+                    </div>
+
+                    <!-- /.intro image -->
+                    <div class="col-md-6 intro-pic wow slideInRight">
+                        <img src="images/intro-image.jpg" alt="image" class="img-responsive">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- /.feature section -->
+        <div id="AstrologicalAspect">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 col-sm-12 text-center feature-title">
+
+                        <!-- /.feature title -->
+                        <!--
+                        <h2>Recreate your ideas and gain more success</h2>
+                        <p>Increase your user loyalty by maintaining mutual communication and nurturing your online community.</p>
+                        -->
+                    </div>
+                </div>
+                <div class="row row-feat">
+                    <div class="col-md-4 text-center">
+
+                        <!-- /.feature image -->
+                        <div class="feature-img">
+                            <img src="images/feature-image.jpg" alt="image" class="img-responsive wow fadeInLeft">
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+
+                        <!-- /.feature 1 -->
+                        <p class=" wow fadeInUp" data-wow-delay="0.2s">
+                          As advised in the astrological system devised by Namkhai Norbu Rinpoche and found in the Merigar Diary, in this current year those who are particularly advised to save lives are those people born in the following years
+                          (beware that the Tibetan lunar year usually starts in February or March so you must check exactly in which year his birth is considered to have taken place in):
+                          <br><br>
+                          1925, 1926, 1927, 1928, 1931, 1932, 1933, 1934, 1937, 1938, 1939, 1943, 1944, 1945, 1946, 1949, 1950, 1951, 1952, 1955, 1956, 1957, 1958, 1961, 1962, 1963, 1964, 1967, 1968, 1969, 1970, 1973, 1974, 1975, 1976, 1979, 1980, 1981, 1982, 1985, 1986, 1987, 1988, 1991, 1992, 1993, 1994, 1997, 1998, 1999, 2000, 2003, 2004, 2005, 2006, 2009, 2010, 2011, 2012, 2015, 2016
+
+                          <br><br>
+
+                          By buying animals you are saving their lives and also contributing to the activities of Shang Shung institute UK and of the sangha of
+                          <a href="http://ssits.org/v1/#H.E" target="_blank">H.E Chatral Rinpoche</a>.
+                          Thank you for your participation!
+
+                          <br><br>
+
+                          <i>
+                            To simplify banking transactions, you can also collect money together with your friends, and then send it together in a single transaction.
+                          </i>
+                        </p>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="ChatralRinpoche">
+            <div class="container">
+                <div class="row">
+
+                    <!-- /.feature content -->
+                    <div class="col-md-6 wow fadeInLeft">
+                        <h2>
+                          Benefits of Saving Lives
+                          by Chatral Rinpoche
+                        </h2>
+                        <p>
+                          I bow down before the Lama, Buddha Amitayus,<br>
+                          And the bodhisattvas in training.<br>
+                          I shall now in brief describe the benefits<br>
+                          Of freeing animals and ransoming their lives.<br>
+                          To save animals from slaughter or any mortal danger,<br>
+                          With an entirely pure motivation and conduct,<br>
+                          Is without doubt a practice to be taken up<br>
+                          By all followers of the Buddha Shakyamuni.<br>
+                          Many sutras, tantras and commentaries<br>
+                          Describe in detail the advantages it brings,<br>
+                          And countless learned and accomplished masters of India and Tibet<br>
+                          Have stressed the value and importance of benefitting beings.<br>
+                          Even in the basic vehicle one avoids inflicting harm on others,<br>
+                          In the mahayana this is the very training of a bodhisattva,<br>
+                          And in the secret mantra, a principal samaya of the ratna family.<br>
+                          The reasoning behind this is as follows: in this world,<br>
+                          Nothing is as dear to someone as his or her own life,<br>
+                          So no greater crime is there than taking life away,<br>
+                          And no conditioned virtue brings greater merit<br>
+                          Than the act of saving beings and ransoming their lives.<br>
+                          Therefore, should you wish for happiness and good,<br>
+                          Exert yourself in this, the most supreme of paths,<br>
+                          Which is proven through scriptures and through reasoning,<br>
+                          And is free of obstacles and potential dangers.<br>
+                          Consider your own body and with this as an example,<br>
+                          Avoid doing anything that might bring harm to others.<br>
+                          Make every effort not to kill any living creature,<br>
+                          Birds, fish, deer, cattle and even tiny insects,<br>
+                          And strive instead to save their lives,<br>
+                          Offering them protection from every fear.<br>
+                          The benefit of doing so is beyond imagining.<br>
+                          This is the best practice for your own longevity,<br>
+                          And the greatest ritual for the living or deceased.<br>
+                          It is my main practice of benefitting others.<br>
+                          It dispels all external and internal adversity and obstacles,<br>
+                          Effortlessly and spontaneously, it brings favourable conditions,<br>
+                          And, when inspired by the noble mind of bodhichitta and<br>
+                          Completed with dedication and pure aspiration prayers,<br>
+                          It will lead one to complete enlightenment,<br>
+                          And the accomplishment of one’s own and others’ welfare—<br>
+                          Of this you need have no doubts at all!<br>
+                          Those whose minds incline to virtue and acts of merit,<br>
+                          Should prohibit hunting and fishing on their land.<br>
+                          Some birds, in particular, such as geese and cranes,<br>
+                          Are impelled by their karma to migrate<br>
+                          And fly south in autumn, north in spring.<br>
+                          At times, weary from the efforts of their flight,<br>
+                          Or having lost their way, some are forced to land,<br>
+                          Distressed, afraid and anxious; when this happens,<br>
+                          You should not throw stones or shoot at them,<br>
+                          Nor try to kill them or do them any harm,<br>
+                          But protect them so they may easily fly once more.<br>
+                          To offer care and affection to sentient beings<br>
+                          In desperate situations who lack protection<br>
+                          Brings just as much merit as the meditation<br>
+                          On emptiness with compassion as its core—<br>
+                          So it has been said by glorious Lord Atisha.<br>
+                          Lamas, officials, monks, nuns, men and women,<br>
+                          In all the places over which you have control,<br>
+                          Exert every influence and do all within your power<br>
+                          To release animals and ransom their lives,<br>
+                          While encouraging others to do the same.<br>
+                          In all those places where this is done,<br>
+                          Sickness among people and livestock will cease,<br>
+                          Harvests will be plentiful and life will be long.<br>
+                          All will enjoy happiness and wellbeing in abundance,<br>
+                          And at death let go of deluded experience,<br>
+                          Before finding an excellent rebirth within the higher realms.<br>
+                          Ultimately, there is no doubt that this will lead one easily<br>
+                          To find the supreme and perfect state of awakening.<br>
+                          In response to the request of Doctor Dordrak,<br>
+                          Who offered a pure silk scarf and a hundred Nepali rupees,<br>
+                          The one called Chatral Sangye Dorje,<br>
+                          Who strives continuously to ransom lives,<br>
+                          Wrote down spontaneously whatever came to mind.<br>
+                          By the merit of this may all sentient beings<br>
+                          Come to practise enlightened actions!<br>
+                          Mamakoling samanta!<br>
+                          | Translated by Adam Pearcey, 2005<br>
+                        </p>
+
+
+
+                    </div>
+
+                    <!-- /.feature image -->
+                    <div class="col-md-6 feature-2-pic wow fadeInRight">
+                        <img src="images/feature2-image.jpg" alt="macbook" class="img-responsive">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div id="DonationsbyBankTransfer">
+            <div class="action fullscreen parallax" style="background-image:url('images/bg.jpg');" data-img-width="2000" data-img-height="1333" data-diff="100">
+                <div class="overlay">
+                    <div class="container">
+                        <div class="col-md-8 col-md-offset-2 col-sm-12 text-center">
+
+                            <!-- /.download title -->
+                            <h2 class="wow fadeInRight">
+                              Donations by Bank Transfer:
+                            </h2>
+                            <p class="download-text wow fadeInLeft">
+
+                              <p class="donationsBankTransfer">
+                                - If you wish to donate for your animal release by bank transfer, please use 'VESAKDONATION' as your reference using the bank details below
+                                <br>
+                                - Deadline for orders 31th March
+                                <br>
+                                - Email us the quantity of fish (&pound;1.50 each) and or goats (&pound;145 each) you would like to release and the total you have transferred to our bank account using this email address: animalrelease@shangshunguk.org
+
+                              </p>
+                              <br>
+                              <p class="donationsBankTransfer">
+                                Bank Details:
+                                <br>
+                                Bank Name: HSBC | A/C Name: Shang Shung UK LTD | Sort Code: 40-03-36 | A/C Number: 21333585
+                                <br>
+                                IBAN: GB40MIDL40033621333585 | BIC: MIDLGB2140V
+                              </p>
+
+
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- /.footer -->
+        <footer id="footer">
+            <div class="container">
+                <div class="col-sm-4 col-sm-offset-4">
+                    <!-- /.social links -->
+                    <div class="social text-center">
+                        <ul>
+                            <li><a class="wow fadeInUp" href="https://twitter.com/shangshunguk"><i class="fa fa-twitter"></i></a></li>
+                            <li><a class="wow fadeInUp" href="https://www.facebook.com/pages/The-London-Institute-of-Tibetan-Studies-Shang-Shung-UK/154321204578917" data-wow-delay="0.2s"><i class="fa fa-facebook"></i></a></li>
+                            <!--
+                            <li><a class="wow fadeInUp" href="https://plus.google.com/" data-wow-delay="0.4s"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a class="wow fadeInUp" href="https://instagram.com/" data-wow-delay="0.6s"><i class="fa fa-instagram"></i></a></li>
+                            -->
+                        </ul>
+                    </div>
+                    <div class="text-center wow fadeInUp" style="font-size: 14px;">
+                      Losar 2017 -
+                      For more information please write to: <a href="mailto:lungtas@shangshunguk.org">lungtas@shangshunguk.org</a>
+                      <br>
+                      Shang Shung UK Ltd.
+                    </div>
+                    <a href="#" class="scrollToTop"><i class="pe-7s-up-arrow pe-va"></i></a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- /.javascript files -->
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/custom.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
         <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
+                                    new WOW().init();
         </script>
-        {% block botjs_add %}{% endblock %}
-        
-        
-        {#% if app.environment =='dev' and Variables is defined %}{{ include('EMLCmsBundle:_includes:Variables.html.twig',{'Variables':Variables}) }}{% endif %#}
-        
+
+        <script src="js/_main.js"></script>
     </body>
 </html>
