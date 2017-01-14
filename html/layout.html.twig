@@ -36,7 +36,7 @@
         <div id="top"></div>
 
         {% set lang = app.request.locale %}
-        {{ include( "EMLCmsBundle:" ~ lang ~ ".html.twig") }}
+        {{ include( "EMLCmsBundle:Home:" ~ lang ~ ".html.twig") }}
 
         <!-- /.javascript files -->
         <script src="{{ asset('js/jquery.js')}}"></script>
