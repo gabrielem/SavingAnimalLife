@@ -1,0 +1,24 @@
+{% extends 'EMLCmsBundle::layout.html.twig' %}
+{% block content %}
+    
+<div class="breadcrumbs">
+    {% if catArea is not empty %}
+    <a href="{{path('eml_cms_area',{'idArea':catArea.id,'slug':catArea.slug})}}">{{ catArea.h1 }}</a>
+    <span class="sep"><tt>&gt;</tt></span>
+    {% endif %}
+    
+    {% if catParentcat is not empty %}
+    <a href="{{path('eml_cms_home_lang')}}c/{{catParentcat.slug}}/">{{ catParentcat.h1 }}</a>
+    <span class="sep"><tt>&gt;</tt></span>
+    {% endif %}
+    
+    
+    
+    <a href="{{path('eml_cms_home_lang')}}c/{{cat.slug}}/"><tt>{{cat.h1}}</tt></a>    
+</div>
+    
+<div class="productList4">
+    {{ include('EMLCmsBundle:_includes:loop_elements.html.twig', { 'elements':elements,'max_rows':'4' }) }}
+</div>
+{% endblock %}
+

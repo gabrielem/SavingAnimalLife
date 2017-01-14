@@ -1,0 +1,40 @@
+{% extends 'EMLCmsBundle::layout.html.twig' %}
+
+
+{% block botjs_add %}
+{% endblock %}
+
+{% block content %}
+    <div style="text-align: center">
+        <br><br>
+        <h1>_master home</h1>
+        <center>
+            <form method="post" action="{{ path('eml_cms_search') }}">
+                <input type="text" name="q" value="" placeholder="Search">
+            </form> 
+        </center> 
+    </div>
+            
+    <div>
+        {% for item in sections %}
+            <a href="{{ path('eml_cms_home_lang') }}c/{{ item.c_slug }}/">{{ item.c_h1 }}</a>
+        {% endfor %}
+    </div>
+
+
+
+
+    {% for item in featured['banner'] %}
+        <div class="item">
+            <a href="{{item.redirect}}"><img src="{{ asset('_files/img/featured/original/' ~ item.id ~ '.png') }}" style="width:82px;height:123px;"></a>
+            <h2><a href="{{item.redirect}}">{{item.h1}}</a></h2>
+            <p class="txt">
+                {{item.text|raw}}
+            </p>
+            <span class="price">&euro;. {{item.h2}}</span>
+        </div>    
+    {% endfor%}
+    
+    
+{% endblock %}
+    

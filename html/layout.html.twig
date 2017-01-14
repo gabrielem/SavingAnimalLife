@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{% block title %}_master{% endblock %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        
+        <link rel="stylesheet" href="{{ asset('css/normalize.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+
+        <script src="{{ asset('js/vendor/modernizr-2.6.2.min.js') }}"></script>
+        {% block css_add %}{% endblock %}
+        {% block topjs_add %}{% endblock %}
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        Menu
+        <div style="border:1px solid;padding:9px;">
+        {% if menu['main-menu'] is defined %}
+            <ul>
+        {% for item in menu['main-menu'] %}
+            {% if item.mt_slug=='main-menu' %}
+                <li>{% if item.sel %}SEL::{% endif %}<a href="{{item.uri}}">{{item.label}}</a></li>
+                {% if item['SubMenu'] is defined %}
+                <ul>
+                    {% for item2 in item['SubMenu'] %}
+                        <li><a href="{{item2.uri}}">{{item2.label}}</a></li>
+                    {% endfor%}
+                </ul>
+                {% endif %}
+            {% endif %}
+        {% endfor%}
+            </ul>
+        {% endif %}
+        </div>
+        
+        {% block content %}
+        {% endblock %}                    
+        <footer></footer>        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{{ asset('js/vendor/jquery-1.11.1.min.js') }}"><\/script>')</script>
+
+        <script src="{{ asset('js/plugins.js') }}"></script>
+        <script src="{{ asset('js/main.js') }}"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+        {% block botjs_add %}{% endblock %}
+        
+        
+        {#% if app.environment =='dev' and Variables is defined %}{{ include('EMLCmsBundle:_includes:Variables.html.twig',{'Variables':Variables}) }}{% endif %#}
+        
+    </body>
+</html>

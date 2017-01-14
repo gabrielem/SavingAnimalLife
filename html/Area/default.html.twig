@@ -1,0 +1,51 @@
+{% extends 'EMLCmsBundle::layout.html.twig' %}
+
+{% block botjs_add %}
+<script>
+$(function() {
+    $("#Area .list .contentCat").mouseenter(function() {
+        $("#subCat_"+$(this).attr('rel')).slideDown();
+    }).mouseleave(function() {
+        $("#subCat_"+$(this).attr('rel')).slideUp();
+    });
+});    
+</script>
+{% endblock %}
+
+
+{% block content %}
+<div id="Area">
+    {% if file_exists(web_path~asset('/files/img/area/' ~ area.id ~ '.jpg')) %}
+    <img src="{{ asset('files/img/area/' ~ area.id ~ '.jpg') }}" width="100%">
+    {% endif %}
+    {% if categories is not empty %}
+        <div class="list">
+        {% for i in categories %}
+            {% set id_c = i.c_id %}
+            {% set id_cc = i.cc_id %}
+            {% if id_c_Save is not defined or  id_c != id_c_Save %}
+            <div class="contentCat" rel="{{ i.c_id }}">
+            <a class="cat{% if i.cc_id is not empty %} hasChilds{% endif%}" id="cat_{{ i.c_id }}" href="{{ path('eml_cms_home_lang') }}c/{{ i.c_slug }}/">{{ i.c_h1 }}</a>
+                <div class="subCat" id="subCat_{{ i.c_id }}">
+            {% endif %}
+            {% if i.cc_h1 is not empty %}
+                    <a class="sub fromcat_{{ i.c_id }}" href="{{ path('eml_cms_home_lang') }}c/{{ i.cc_slug }}/">- {{ i.cc_h1 }}</a>
+            {% endif %}
+            {% if (id_cc_Save is defined and id_cc != id_cc_Save) or loop.last or id_cc is empty %}
+                </div>
+            </div>
+            {% endif %}
+            
+            {% set id_cc_Save = i.cc_id %}
+            {% set id_c_Save = i.c_id %}
+        {% endfor %}
+            
+        </div>
+    {% endif %}
+</div>
+
+
+{% include 'EMLCmsBundle::_includes/_best_price.html.twig' %}
+{% include 'EMLCmsBundle::_includes/_bottom_banner.html.twig' %}
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'EMLCmsBundle::layout.html.twig' %}
+
+
+{% block botjs_add %}
+{% endblock %}
+
+{% block content %}
+    <div style="text-align: center">
+        <br><br>
+        <h1>_master home</h1>
+        <center>
+            <form method="post" action="{{ path('eml_cms_search') }}">
+                <input type="text" name="q" value="" placeholder="Search">
+            </form> 
+        </center> 
+    </div>
+            
+    <div>
+        {% for item in sections %}
+            <a href="{{ path('eml_cms_home_lang') }}c/{{ item.c_slug }}/">{{ item.c_h1 }}</a>
+        {% endfor %}
+    </div>
+
+
+
+
+    <h1>CARRELLO</h1>
+    {% if Cart is defined and Cart is not empty %}
+        <table border="1">
+            <tr>
+                <td>Item</td>
+                <td>Qta</td>
+                <td>costo</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            {% for i in Cart %}
+            <tr>
+                <td>{{i.info.h1}}</td>
+                <td>{{i.cart_qty}}</td>
+                <td>{{i.info.price}}</td>
+                <td><a href="{{path('eml_cms_cart_add')}}?id={{i.info.id}}&qty=-1" style="border-radius:20px;min-height: 20px;min-width: 20px;color:#ffffff;background: red; display:block;text-align:center;">-</a></td>
+                <td><a href="{{path('eml_cms_cart_add')}}?id={{i.info.id}}&qty=1" style="border-radius:20px;min-height: 20px;min-width: 20px;color:#ffffff;background: green; display:block;text-align:center; ">+</a></td>
+                
+                <td><a href="{{path('eml_cms_cart_add')}}?id={{i.info.id}}&qty=-{{i.cart_qty}}">togli</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+            
+    {% else %}
+        Carrello vuoto
+    {% endif %}
+{% endblock %}
+    

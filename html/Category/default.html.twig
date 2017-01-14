@@ -1,0 +1,62 @@
+{% extends 'EMLCmsBundle::layout.html.twig' %}
+
+
+{% block title %}{{cat.h1}}{% endblock %}
+
+{% block content %}
+    
+    
+<div class="breadcrumbs">
+    {% if catArea is not empty %}
+    <a href="{{path('eml_cms_area',{'idArea':catArea.id,'slug':catArea.slug})}}">{{ catArea.h1 }}</a>
+    <span class="sep"><tt>&gt;</tt></span>
+    {% endif %}
+    
+    {% if catParentcat is not empty %}
+    <a href="{{path('eml_cms_home_lang')}}c/{{catParentcat.slug}}/">{{ catParentcat.h1 }}</a>
+    <span class="sep"><tt>&gt;</tt></span>
+    {% endif %}
+    
+    
+    
+    <a href="{{path('eml_cms_home_lang')}}c/{{cat.slug}}/"><tt>{{cat.h1}}</tt></a>    
+</div>
+
+
+{% if catChildscat is not empty %}
+    {% for i in catChildscat %}
+        {{i.h1}}<br>
+    {% endfor%}
+{% endif %}    
+
+
+
+{# 22 lug 2015 | Jacopo aggiunta funzione #}
+{# set mycats = get_categories_by_id_area(cat.id,app.request.locale,0,"pacchetti") #}
+{% set cats_by_area = get_categories_by_id_area(1,app.request.locale) %}
+<pre>
+    get_categories_by_id_area(1,app.request.locale):
+    {% for i in cats_by_area %}
+        {{ i.slug }}
+    {% endfor %}
+
+
+
+</pre>
+
+
+
+
+    
+<pre>Pagination:</pre>
+
+    {{ include('EMLCmsBundle:_includes:pagination.html.twig', { 'pagination':pagination }) }}
+
+<div class="productList4">
+    {{ include('EMLCmsBundle:_includes:loop_elements.html.twig', { 'elements':elements,'max_rows':'4' }) }}
+</div>
+    
+    {{ include('EMLCmsBundle:_includes:pagination.html.twig', { 'pagination':pagination }) }}
+    
+{% endblock %}
+

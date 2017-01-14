@@ -1,0 +1,8 @@
+{% extends "EMLCmsBundle:Email:template.html.twig" %}
+
+{% block content %}
+    {% for key,value in emailVars %}
+        {{ key }}: {{ value }}<br>
+
+    {% endfor %}
+{% endblock %}

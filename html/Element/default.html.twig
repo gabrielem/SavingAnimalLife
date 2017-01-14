@@ -1,0 +1,81 @@
+{% extends 'EMLCmsBundle::layout.html.twig' %}
+{% block content %}
+    
+<div id="Page">
+    
+    
+    <h1>{{ element.h1 }} </h1>
+    <p>
+        <a href="{{path('eml_cms_cart_add')}}?id={{element.id}}&qty=1">compra</a>
+        
+    </p>
+        
+    {{ element.text|raw }}
+
+    <h3>ELEMENTI DA CATEGORIA:</h3>
+    (con funzione twig)
+    <br> 
+    {% if eleFirstCat.id is defined and eleFirstCat.id is not empty %}
+        {% set elements = get_element_by_id_category(eleFirstCat.id,app.request.locale,element.id) %}
+        {% if elements is not empty  %}
+            {% for i in elements %}
+                <li>
+                    <a href="{{path('eml_cms_element',{'slug':i.slug})}}">
+                        {{i.h1}}
+                    </a>
+                </li>
+            {% endfor %}
+        {% endif %}
+    {% endif %}
+    
+    
+    {% if eleChilds is not empty %}
+    <hr>
+    <h3> Elementi Figli: </h3>
+    <hr>
+        {% for item in eleChilds %}
+                {{ item.weight }}) {{ item.h1 }}<br>
+                <a href="{{path('eml_cms_cart_add')}}?id={{item.id}}&qty=1">compra</a>
+                
+            <hr>
+        {% endfor %}
+    {% endif %}
+    
+    {% if image is not empty %}
+    <hr>
+    Images:
+    <hr>
+    {% for item in image %}
+        {% for k,v in item %}
+            {{ k ~ '=>' ~ v }}<br>
+        {% endfor %}
+        <hr>
+    {% endfor %}
+    {% endif %}
+
+    {% if attach is not empty %}
+    <hr>
+    Attachements:
+    <hr>
+    {% for item in attach %}
+        {% for k,v in item %}
+            {{ k ~ '=>' ~ v }}<br>
+        {% endfor %}
+        <hr>
+    {% endfor %}
+    {% endif %}
+
+    {% if link is not empty %}
+    <hr>
+    Link:
+    <hr>
+    {% for item in link %}
+        {% for k,v in item %}
+            {{ k ~ '=>' ~ v }}<br>
+        {% endfor %}
+        <hr>
+    {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}
+

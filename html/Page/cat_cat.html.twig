@@ -1,0 +1,28 @@
+{% extends 'EMLCmsBundle::layout.html.twig' %}
+{% block content %}
+    CATEGORY-SUBCATEGORY VIEW !!!!<br><br>
+
+    <hr>
+    Child Elements From:<br>
+    {{ '· '~cat1.h1 }}<br>
+    {{ '· '~cat2.h1 }}<br>
+    <hr>
+    {% for item in r %}
+        {% for k,v in item %}
+            {{ k~'=>'~v }}<br>
+        {% endfor %}
+        <hr>
+    {% endfor %}
+
+    <hr>
+    Menu:
+    <hr>
+    {% for item in menu %}
+        {% for k,v in item %}
+            {{ k~'=>'~v }}<br>
+        {% endfor %}
+        <hr>
+    {% endfor %}
+
+{% endblock %}
+

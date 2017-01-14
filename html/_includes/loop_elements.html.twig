@@ -1,0 +1,25 @@
+{% set count=0 %}
+{% for i in elements %}
+    
+    {% set Costo = getExtrafieldBySlug(i.extrafields,"costo") %}
+    
+    
+    <div class="item">
+        <a href="{{ path('eml_cms_element',{ 'slug':i.slug }) }}">
+            <img src="{{ asset('files/img/elements/' ~ i.slug ~ '.jpg') }}" style="width:120px;height:120px;">
+        </a>
+        <h2>
+            <a href="{{ path('eml_cms_element',{ 'slug':i.slug }) }}">
+                {{ i.h1 }}
+            </a>
+        </h2>
+        <p class="txt">
+        {{ i.text|slice(0,90) }}
+        </p>
+        <span class="price">&euro;. 00,00</span>
+    </div>
+    {% set count=count+1 %}
+    {% if count==max_rows %}
+    <div style="clear:both;"></div>
+    {% endif %}
+{% endfor %}

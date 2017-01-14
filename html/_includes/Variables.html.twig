@@ -1,0 +1,47 @@
+<style>
+    #Variables {
+        position: fixed;
+        top:0px;
+        left:0px;
+        background: #ffffff;
+        max-height: 180px;
+        overflow: auto;
+    }    
+    #Variables .data,
+    #Variables .sets{
+        display: none;
+    }
+    a.act{cursor:pointer;}
+    a.varsItem{cursor:pointer;}
+</style>
+<script>
+$(function(){
+    $("#Variables .act").click(function(){
+        $("#Variables .data").toggle();
+    });
+    $("#Variables a.varsItem").click(function(){
+        var idVar=$(this).attr('id');
+        $("#Variables_"+idVar+" .sets").toggle();
+    });
+});
+</script>
+    
+<div id="Variables">
+    {% if Variables is not empty %}
+    <a class="act">
+        VARS
+    </a>
+    <div class="data">?
+    
+    {% for k,v in Variables %}
+        <div id="Variables_{{ k }}">
+            <a class="varsItem" id="{{ k }}">{{ k }}</a>
+            <div class="sets">
+            <pre>{{ dump(v) }}</pre>
+            </div>
+        </div>
+    {% endfor %}
+    {% endif %}
+    
+    </div>
+</div>

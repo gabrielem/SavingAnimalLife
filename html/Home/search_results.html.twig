@@ -1,0 +1,31 @@
+{% extends 'EMLCmsBundle::layout.html.twig' %}
+
+
+{% block title %}Search.Results{% endblock %}
+
+{% block content%}
+
+<h1>Search.Results</h1>
+    {% for item in elements %}
+        <a href="{{ path('eml_cms_element',{'slug':item.slug}) }}">
+            {% if file_exists(web_path~asset('/files/img/elements/' ~ item.slug ~ '.jpg')) %}
+            <img class="zinpic" src="{{ asset('files/img/elements/' ~ item.slug ~ '.jpg') }}" style="width:50px;height:50px;">
+            {% else %}
+            <div style="width:50px;height:50px;float:left;">&nbsp;</div>
+            {% endif %}
+        </a>
+            <h2><a href="{{ path('eml_cms_element',{'slug':item.slug}) }}">
+                {{ item.h1 }}
+            </a></h2>
+            <p>
+                {{ item.text|striptags[:90] }}
+            </p>
+        <hr>
+    {% endfor %}
+
+{#% include 'EMLCmsBundle::_includes/_best_price.html.twig' %#}
+{#% include 'EMLCmsBundle::_includes/_bottom_banner.html.twig' %#}
+
+<br><br><br>
+{% endblock %}
+

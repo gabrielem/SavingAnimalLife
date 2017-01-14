@@ -1,0 +1,37 @@
+{% extends 'EMLCmsBundle::layout.html.twig' %}
+{% block content %}
+    TAG VIEW !<br><br>
+
+    <hr>
+    {{ tag.text }}<br>
+    <hr>
+
+    <hr>
+    Elements:
+    <hr>
+    {% for item in r %}
+        {% for k,v in item %}
+            {{ k~'=>'~v }}<br>
+        {% endfor %}
+        <hr>
+    {% endfor %}
+
+    <hr>
+    Menu:
+    <hr>
+    {% for item in menu %}
+        {% for k,v in item %}
+            {{ k~'=>'~v }}<br>
+        {% endfor %}
+        <hr>
+    {% endfor %}
+
+    {% for item in featured %}
+        {% if item.ft_slug == "slideshow" %}
+            {{ item.ft_id }}<br>
+            {{ item.ft_slug }}<br>
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}
+

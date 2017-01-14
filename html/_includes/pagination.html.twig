@@ -1,0 +1,27 @@
+{{ pagination.current_page }} 
+- 
+{{ pagination.total_pages }}
+
+{% if pagination.total_pages > 1 %}
+    <div class="paginator">
+        <div class="prev">
+            {% if pagination.prev is not empty %}
+                <a href="{{ pagination.prev_url }}">prev</a>
+            {% else %}
+                <span>prev</span>
+            {% endif %}
+        </div>
+        <div class="pages">
+            {% for p in pagination.pages %}
+                <a href="{{ p.url }}" class="{{ p.sel }}">{{ p.number }}</a>
+            {% endfor %}
+        </div>
+        <div class="next">
+            {% if pagination.next is not empty %}
+                <a href="{{ pagination.next_url }}">next</a>
+            {% else %}
+                <span>next</span>
+            {% endif %}
+        </div>
+    </div>    
+{% endif %}
