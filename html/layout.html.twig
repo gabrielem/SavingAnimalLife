@@ -35,6 +35,15 @@
         <div id="preloader"></div>
         <div id="top"></div>
 
+        <div id="languages">
+          <a href="/it/">
+            <img src="{{ asset('images/lang/it.gif')}}" alt="" />
+          </a>
+          <a href="/en/">
+            <img src="{{ asset('images/lang/en.gif')}}" alt="" />
+          </a>
+        </div>
+
         {% set lang = app.request.locale %}
         {{ include( "EMLCmsBundle:Home:" ~ lang ~ ".html.twig") }}
 
