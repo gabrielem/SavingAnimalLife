@@ -9,20 +9,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
         <!-- CSS Files -->
-        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="fonts/icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet">
-        <link href="css/animate.css" rel="stylesheet" media="screen">
-        <link href="css/owl.theme.css" rel="stylesheet">
-        <link href="css/owl.carousel.css" rel="stylesheet">
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
+        <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('fonts/icon-7-stroke/css/pe-icon-7-stroke.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/animate.css') }}" rel="stylesheet" media="screen">
+        <link href="{{ asset('css/owl.theme.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/owl.carousel.css') }}" rel="stylesheet">
 
         <!-- Colors -->
-        <link href="css/css-index.css" rel="stylesheet" media="screen">
-        <!-- <link href="css/css-index-green.css" rel="stylesheet" media="screen"> -->
-        <!-- <link href="css/css-index-purple.css" rel="stylesheet" media="screen"> -->
-        <!-- <link href="css/css-index-red.css" rel="stylesheet" media="screen"> -->
-        <!-- <link href="css/css-index-orange.css" rel="stylesheet" media="screen"> -->
-        <!-- <link href="css/css-index-yellow.css" rel="stylesheet" media="screen"> -->
+        <link href="{{ asset('css/css-index.css') }}" rel="stylesheet" media="screen">
+        <!-- <link href="{{ asset('css/css-index-green.css') }}" rel="stylesheet" media="screen"> -->
+        <!-- <link href="{{ asset('css/css-index-purple.css') }}" rel="stylesheet" media="screen"> -->
+        <!-- <link href="{{ asset('css/css-index-red.css') }}" rel="stylesheet" media="screen"> -->
+        <!-- <link href="{{ asset('css/css-index-orange.css') }}" rel="stylesheet" media="screen"> -->
+        <!-- <link href="{{ asset('css/css-index-yellow.css') }}" rel="stylesheet" media="screen"> -->
 
         <!-- Google Fonts -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" />
@@ -36,7 +36,7 @@
         <div id="top"></div>
 
         <!-- /.parallax full screen background image -->
-        <div class="fullscreen landing parallax" style="background-image:url('images/bg.jpg');" data-img-width="2000" data-img-height="1333" data-diff="100">
+        <div class="fullscreen landing parallax" style="background-image:url('{{ asset('images/bg.jpg') }}');" data-img-width="2000" data-img-height="1333" data-diff="100">
 
             <div class="overlay">
                 <div class="container">
@@ -44,7 +44,7 @@
                         <div class="col-md-7">
 
                             <!-- /.logo -->
-                            <div class="logo wow fadeInDown"> <a href=""><img src="images/logo.png" alt="logo"></a></div>
+                            <div class="logo wow fadeInDown"> <a href=""><img src="{{ asset('images/logo.png') }}" alt="logo"></a></div>
 
                             <!-- /.main title -->
                             <h1 class="wow fadeInLeft">
@@ -82,7 +82,7 @@
                                   <div class="row" style="padding-bottom:5px;">
                                     <div class="col-xs-9">
                                       <span class="title">
-                                        <img src="images/ifish.png" alt="" style="float:left;" />
+                                        <img src="{{ asset('images/ifish.png') }}" alt="" style="float:left;" />
                                         <b>Fish Release:</b>
                                         <br>
                                         &pound;1.50 per fish
@@ -100,7 +100,7 @@
                                   <div class="row" style="border-top:0px solid #efefef;padding-top:15px;">
                                     <div class="col-xs-9">
                                       <span class="title">
-                                        <img src="images/igoat.png" alt="" style="float:left;" />
+                                        <img src="{{ asset('images/igoat.png') }}" alt="" style="float:left;" />
                                         <b>Goat Release:</b>
                                         <br>
                                         &pound;145 per goat
@@ -179,7 +179,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand site-name" href="#top"><img src="images/logo2.png" alt="logo"></a>
+                        <a class="navbar-brand site-name" href="#top"><img src="{{ asset('images/logo2.png') }}" alt="logo"></a>
                     </div>
 
                     <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
@@ -219,7 +219,7 @@
 
                     <!-- /.intro image -->
                     <div class="col-md-6 intro-pic wow slideInRight">
-                        <img src="images/intro-image.jpg" alt="image" class="img-responsive">
+                        <img src="{{ asset('images/intro-image.jpg') }}" alt="image" class="img-responsive">
                     </div>
 
                 </div>
@@ -244,7 +244,7 @@
 
                         <!-- /.feature image -->
                         <div class="feature-img">
-                            <img src="images/feature-image.jpg" alt="image" class="img-responsive wow fadeInLeft">
+                            <img src="{{ asset('images/feature-image.jpg') }}" alt="image" class="img-responsive wow fadeInLeft">
                         </div>
                     </div>
 
@@ -379,7 +379,7 @@
 
                     <!-- /.feature image -->
                     <div class="col-md-6 feature-2-pic wow fadeInRight">
-                        <img src="images/feature2-image.jpg" alt="macbook" class="img-responsive">
+                        <img src="{{ asset('images/feature2-image.jpg') }}" alt="macbook" class="img-responsive">
                     </div>
                 </div>
 
@@ -388,7 +388,7 @@
 
 
         <div id="DonationsbyBankTransfer">
-            <div class="action fullscreen parallax" style="background-image:url('images/bg.jpg');" data-img-width="2000" data-img-height="1333" data-diff="100">
+            <div class="action fullscreen parallax" style="background-image:url('{{ asset('images/bg.jpg') }}');" data-img-width="2000" data-img-height="1333" data-diff="100">
                 <div class="overlay">
                     <div class="container">
                         <div class="col-md-8 col-md-offset-2 col-sm-12 text-center">
@@ -453,16 +453,16 @@
         </footer>
 
         <!-- /.javascript files -->
-        <script src="js/jquery.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/custom.js"></script>
-        <script src="js/jquery.sticky.js"></script>
-        <script src="js/wow.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
+        <script src="{{ asset('js/jquery.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/custom.js') }}"></script>
+        <script src="{{ asset('js/jquery.sticky.js') }}"></script>
+        <script src="{{ asset('js/wow.min.js') }}"></script>
+        <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
         <script>
                                     new WOW().init();
         </script>
 
-        <script src="js/_main.js"></script>
+        <script src="{{ asset('js/_main.js') }}"></script>
     </body>
 </html>
