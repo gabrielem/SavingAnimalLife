@@ -1,6 +1,8 @@
 $(function() {
 
   var sendPost = function(){
+
+    var itemnumber = new Date().getTime() + "|" + Math.floor((Math.random() * 10000) + 1);
     var data = {
         'name': $("#name").val(),
         'email': $("#email").val(),
@@ -9,11 +11,15 @@ $(function() {
         'fishsPrice': $('#fishsPrice').val(),
         'goatsPrice': $('#goatsPrice').val(),
         'totalPrice': $('#donationPrice1').val(),
+        'itemnumber': itemnumber
 
 
     };
     console.log("SendPost");
     console.log(data);
+    $("#pp-itemnumber").val(itemnumber)
+    $("#pp-amount").val($('#donationPrice1').val())
+
 
     $.ajax({
       type: 'POST',
@@ -21,6 +27,10 @@ $(function() {
       data: data,
       success: function(msg){
           console.log("Send ok!");
+          /*
+            Send Paypal Post
+          */
+          $("#paypalForm")submit();
       }
     });
   };
