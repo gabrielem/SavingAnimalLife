@@ -48,6 +48,10 @@ $(function() {
     event.preventDefault();
     $(".js-fishs-select").val("0")
     $(".js-goats-select").val("0")
+    $("#donationPrice").val("£0")
+    $("#donationPrice1").val("£0")
+    $("#pp-amount").val("0")
+
     setDonation()
     $("#donate1").show()
     $("#donate2").hide()
