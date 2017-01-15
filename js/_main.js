@@ -1,15 +1,8 @@
 $(function() {
 
-  $(".js-sendDonation").click(function( event ) {
-    event.preventDefault();
-    $("#donate1").hide()
-    $("#donate2").show()
-
-    setDonation()
-
-  });
 
 
+  
   $('.js-fishs-select').empty()
   for (i = 0; i < 109; i++)
   {
@@ -46,13 +39,9 @@ $(function() {
         $(".js-sendDonation").show()
         var fishsPrice = fishPrice*fishs
         var goatsPrice = goatPrice*goats
-        console.log("fishsPrice",fishsPrice)
-        console.log("goatsPrice",mgoatsPrice)
 
         donationPrice = fishsPrice+goatsPrice
         $("#donationPrice").val("£" + donationPrice)
-        $("#donationPrice1").val("£" + donationPrice)
-
 
       }else{
         /*
