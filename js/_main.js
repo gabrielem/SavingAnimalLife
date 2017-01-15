@@ -59,6 +59,12 @@ $(function() {
         console.log("fishsPrice",fishsPrice)
         console.log("goatsPrice",goatsPrice)
 
+        $(".fishsN").html(fishs)
+        $(".fishsPrice").html(fishsPrice)
+
+        $(".goatsN").html(goats)
+        $(".goatsPrice").html(goatsPrice)
+
         donationPrice = fishsPrice+goatsPrice
         $("#donationPrice").val("£" + donationPrice)
         $("#donationPrice1").val("£" + donationPrice)
