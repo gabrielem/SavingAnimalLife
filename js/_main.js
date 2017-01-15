@@ -16,7 +16,7 @@ $(function() {
     $("#donate2").hide()
 
     setDonation()
-    
+
   });
 
   $('.js-fishs-select').empty()
@@ -61,6 +61,8 @@ $(function() {
 
         donationPrice = fishsPrice+goatsPrice
         $("#donationPrice").val("£" + donationPrice)
+        $("#donationPrice1").val("£" + donationPrice)
+
 
       }else{
         /*
