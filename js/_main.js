@@ -1,5 +1,32 @@
 $(function() {
 
+  var sendPost = function(){
+    var data = {
+        'name': $("#name").val(),
+        'email': $("#email").val(),
+        'fishs': $('.js-fishs-select').val(),
+        'goats': $('.js-goats-select').val(),
+
+    };
+    console.log("SendPost");
+    console.log(data);
+
+    $.ajax({
+      type: 'POST',
+      url: '/en/send/',
+      data: data,
+      success: function(msg){
+          console.log("Send ok!");
+      }
+    });
+  };
+
+
+  $(".js-sendEmailDonation").click(function( event ) {
+    event.preventDefault();
+    sendPost()
+  })
+
   $(".js-sendDonation").click(function( event ) {
     event.preventDefault();
     $("#donate1").hide()
@@ -64,6 +91,14 @@ $(function() {
 
         $(".goatsN").html(goats)
         $(".goatsPrice").html(goatsPrice)
+
+        $("#fishsN").val(fishs)
+        $("#fishsPrice").val(fishsPrice)
+
+        $("#goatsN").val(goats)
+        $("#goatsPrice").val(goatsPrice)
+
+
 
         donationPrice = fishsPrice+goatsPrice
         $("#donationPrice").val("£" + donationPrice)
