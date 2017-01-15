@@ -1,9 +1,17 @@
+var fishPrice = 1.50;
+var goatPrice = 145;
+
+var fishs = $('.js-fishs-select').val()
+var goats = $('.js-goats-select').val()
+
 $(function() {
 
   $(".js-sendDonation").click(function( event ) {
     event.preventDefault();
     $("#donate1").hide()
     $("#donate2").show()
+
+    if()
   });
 
 
@@ -30,11 +38,7 @@ $(function() {
 
   var setDonation = function(){
     console.log("setDonation");
-    var fishPrice = 1.50;
-    var goatPrice = 145;
 
-      var fishs = $('.js-fishs-select').val()
-      var goats = $('.js-goats-select').val()
       if(fishs>0 || goats>0){
         /*
           Set a donation items
