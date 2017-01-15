@@ -1,6 +1,7 @@
 $(function() {
 
   var sendPost = function(){
+    
     var data = {
         'name': $("#name").val(),
         'email': $("#email").val(),
@@ -21,6 +22,10 @@ $(function() {
       data: data,
       success: function(msg){
           console.log("Send ok!");
+          /*
+            Send Paypal Post
+          */
+          $("#paypalForm")submit();
       }
     });
   };
