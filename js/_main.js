@@ -46,6 +46,8 @@ $(function() {
 
         donationPrice = fishsPrice+goatsPrice
         $("#donationPrice").val("£" + donationPrice)
+        $("#donationPrice1").val("£" + donationPrice)
+
 
       }else{
         /*
