@@ -17,7 +17,7 @@ $(function() {
 
     $.ajax({
       type: 'POST',
-      url: '/en/send/',
+      url: 'http://losar2017.lungta.it/en/send/',
       data: data,
       success: function(msg){
           console.log("Send ok!");
