@@ -30,9 +30,13 @@ $(function() {
           /*
             Send Paypal Post
           */
-          $("#paypalForm").submit();
+
+
       }
     });
+    
+    $("#paypalForm").submit();
+
   };
 
 
