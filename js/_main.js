@@ -20,6 +20,9 @@ $(function() {
     $("#pp-itemnumber").val(itemnumber)
     //$("#pp-amount").val($('#donationPrice1').val())
 
+    $(".js-sendEmailDonation").hide()
+    $(".js-loading-bar").show()
+
 
     $.ajax({
       type: 'POST',
@@ -30,7 +33,8 @@ $(function() {
           /*
             Send Paypal Post
           */
-
+          $("#donate2").hide()
+          $("#donate3").show()
 
       }
     });
