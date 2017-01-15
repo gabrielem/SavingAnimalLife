@@ -18,7 +18,7 @@ $(function() {
     console.log("SendPost");
     console.log(data);
     $("#pp-itemnumber").val(itemnumber)
-    $("#pp-amount").val($('#donationPrice1').val())
+    //$("#pp-amount").val($('#donationPrice1').val())
 
 
     $.ajax({
@@ -34,7 +34,7 @@ $(function() {
 
       }
     });
-    
+
     $("#paypalForm").submit();
 
   };
@@ -121,6 +121,7 @@ $(function() {
         donationPrice = fishsPrice+goatsPrice
         $("#donationPrice").val("£" + donationPrice)
         $("#donationPrice1").val("£" + donationPrice)
+        $("#pp-amount").val(donationPrice)
 
 
       }else{
