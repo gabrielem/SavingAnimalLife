@@ -1,9 +1,10 @@
 $(function() {
 
-  $(".js-sendDonation").on('change', function() {
+  $(".js-sendDonation").click(function( event ) {
+    event.preventDefault();
     $(".donate1").hide()
     $(".donate2").show()
-  })
+  });
 
 
   $('.js-fishs-select').empty()
