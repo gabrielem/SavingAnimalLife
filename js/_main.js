@@ -4,8 +4,12 @@ $(function() {
     var data = {
         'name': $("#name").val(),
         'email': $("#email").val(),
-        'fishs': $('.js-fishs-select').val(),
-        'goats': $('.js-goats-select').val(),
+        'fishs': $('#fishsN').val(),
+        'goats': $('#goatsN').val(),
+        'fishsPrice': $('#fishsPrice').val(),
+        'goatsPrice': $('#goatsPrice').val(),
+        'totalPrice': $('#donationPrice1').val(),
+
 
     };
     console.log("SendPost");
