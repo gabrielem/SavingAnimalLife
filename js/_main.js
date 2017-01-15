@@ -1,4 +1,11 @@
 $(function() {
+
+  $(".js-sendDonation").on('change', function() {
+    $(".donate1").hide()
+    $(".donate2").show()
+  })
+
+
   $('.js-fishs-select').empty()
   for (i = 0; i < 109; i++)
   {
