@@ -1,10 +1,12 @@
-var fishPrice = 1.50;
-var goatPrice = 145;
-
-var fishs = $('.js-fishs-select').val()
-var goats = $('.js-goats-select').val()
 
 $(function() {
+
+  var fishPrice = 1.50;
+  var goatPrice = 145;
+
+  var fishs = $('.js-fishs-select').val()
+  var goats = $('.js-goats-select').val()
+
 
   $(".js-sendDonation").click(function( event ) {
     event.preventDefault();
