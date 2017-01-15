@@ -44,6 +44,16 @@ $(function() {
   };
 
 
+  $(".js-new-donation").click(function( event ) {
+    event.preventDefault();
+    $(".js-fishs-select").val("0")
+    $(".js-goats-select").val("0")
+    setDonation()
+    $("#donate1").show()
+    $("#donate2").hide()
+    $("#donate3").hide()
+  })
+
   $(".js-sendEmailDonation").click(function( event ) {
     event.preventDefault();
     sendPost()
@@ -53,6 +63,7 @@ $(function() {
     event.preventDefault();
     $("#donate1").hide()
     $("#donate2").show()
+    $("#donate3").hide()
 
     setDonation()
 
